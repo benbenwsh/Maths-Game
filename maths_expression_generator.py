@@ -1,15 +1,14 @@
 import random
 import math
 
-
 class MathsExpressionGenerator:
     # These methods should return an answer
     # Ideally, a tuple with the snd being the answer to that expression
     # There are quite a bit of overlap in these methods, maybe use helper functions?
     @staticmethod
     def addition():
-        fst_no = random.randint(1, 999)
-        snd_no = random.randint(1, 999)
+        fst_no = random.randint(10, 999)
+        snd_no = random.randint(10, 999)
 
         answer = fst_no + snd_no
         expressions = [
@@ -22,7 +21,7 @@ class MathsExpressionGenerator:
 
     @staticmethod
     def subtraction():
-        fst_no = random.randint(1, 999)
+        fst_no = random.randint(100, 999)
         snd_no = random.randint(1, fst_no)
 
         answer = fst_no - snd_no
@@ -77,7 +76,7 @@ class MathsExpressionGenerator:
     def division():
         dividend, divisor = MathsExpressionGenerator.division_hard()
 
-        answer = math.round(dividend / divisor)
+        answer = round(dividend / divisor)
 
         expressions = [
             f"Divide {dividend} by {divisor}",
